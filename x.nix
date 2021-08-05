@@ -20,4 +20,7 @@
     shadow = true;
     fadeDelta = 4;
   };
+
+  services.upower.enable = true;
+  systemd.services.upower.enable = true;
 }
