@@ -14,6 +14,7 @@
       ./language.nix
       ./emacs.nix
       ./x.nix
+      ./virtualisation.nix
     ];
 
   nix.binaryCaches = [ "https://mirrors.ustc.edu.cn/nix-channels/store" "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
@@ -76,8 +77,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  virtualisation.docker.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
