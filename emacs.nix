@@ -2,7 +2,7 @@
 
 {
   services.emacs = {
-    package = pkgs.emacsGcc;
+    package = pkgs.emacsGit;
     defaultEditor = true;
   };
   nixpkgs.overlays = [

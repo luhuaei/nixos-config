@@ -17,7 +17,10 @@
       ./virtualisation.nix
     ];
 
-  nix.binaryCaches = [ "https://mirrors.ustc.edu.cn/nix-channels/store" "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
+  nix.binaryCaches = [
+    "https://mirrors.ustc.edu.cn/nix-channels/store"
+    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+  ];
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
