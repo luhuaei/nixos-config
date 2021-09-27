@@ -66,6 +66,13 @@
 
     # debug
     htop
+
+    # system
+    pciutils
+    usbutils
+    binutils
+    dmidecode
+    lshw
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
