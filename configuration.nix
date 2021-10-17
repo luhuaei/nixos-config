@@ -9,6 +9,7 @@
     [
       # Include the results of the hardware scan.
       ./boot.nix
+      ./init.nix
       ./shell.nix
       ./network.nix
       ./language.nix
@@ -16,11 +17,6 @@
       ./x.nix
       ./virtualisation.nix
     ];
-
-  nix.binaryCaches = [
-    "https://mirrors.ustc.edu.cn/nix-channels/store"
-    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-  ];
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
