@@ -16,6 +16,9 @@
       ./emacs.nix
       ./x.nix
       ./virtualisation.nix
+
+      # services
+      <touchctrl-go/touchctrl.nix>
     ];
 
   # Enable CUPS to print documents.
@@ -70,6 +73,7 @@
   # };
 
   # List services that you want to enable:
+  services.touchctrl.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
