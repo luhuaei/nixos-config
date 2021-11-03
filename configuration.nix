@@ -62,6 +62,8 @@
     binutils
     dmidecode
     lshw
+    lsof
+    inetutils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -73,7 +75,11 @@
   # };
 
   # List services that you want to enable:
-  services.touchctrl.enable = true;
+  services.touchctrl = {
+    enable = true;
+    touchpad = "/dev/input/event11";
+    keyboard = "/dev/input/event0";
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
