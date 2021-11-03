@@ -13,7 +13,6 @@
       ./shell.nix
       ./network.nix
       ./language.nix
-      ./emacs.nix
       ./x.nix
       ./virtualisation.nix
 
@@ -48,6 +47,9 @@
 
     # video
     mpv
+
+    #window manager
+    wmctrl
 
     # record
     peek
