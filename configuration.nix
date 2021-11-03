@@ -44,6 +44,7 @@
   environment.systemPackages = with pkgs; [
     # editor
     vim
+    emacs
 
     # video
     mpv
@@ -62,10 +63,10 @@
     pciutils
     usbutils
     binutils
+    inetutils
     dmidecode
     lshw
     lsof
-    inetutils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

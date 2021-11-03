@@ -7,6 +7,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    bash
     direnv
     lorri
     zsh
