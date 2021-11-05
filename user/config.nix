@@ -21,6 +21,11 @@ let
     nixpkgs-fmt
   ];
 
+  musicPkgs = with pkgs; [
+    unrar
+    shntool
+  ];
+
   devPkgs = with pkgs; [
     google-chrome
     caddy
@@ -47,20 +52,19 @@ let
     upx
     valgrind
     zdns
+
+    wpsoffice
   ];
 in
 {
   allowUnfree = true;
   packageOverrides = pkgs: with pkgs; rec {
-    myEmacs = pkgs.buildEnv {
-      name = "my-emacs";
-      paths = emacsPkgs;
-      extraOutputsToInstall = [ "man" "doc" ];
-    };
-
     myEnv = pkgs.buildEnv {
       name = "my-env";
-      paths = devPkgs ++ emacsPkgs;
+      paths = devPkgs
+        ++ emacsPkgs
+        ++ musicPkgs
+      ;
     };
   };
 }
