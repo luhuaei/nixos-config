@@ -52,6 +52,8 @@ let
     upx
     valgrind
     zdns
+    tree
+    openssl
 
     wpsoffice
   ];
