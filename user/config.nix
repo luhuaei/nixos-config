@@ -26,8 +26,14 @@ let
     shntool
   ];
 
+  videoPkgs = with pkgs; [
+    vlc
+  ];
+
   devPkgs = with pkgs; [
     google-chrome
+    firefox
+
     caddy
     calibre
     cntr
@@ -54,8 +60,17 @@ let
     zdns
     tree
     openssl
+    multimarkdown
+    unzip
 
     wpsoffice
+    nixpkgs-review
+  ];
+
+  androidPkgs = with pkgs; [
+    android-studio
+    openjdk11
+    gradle
   ];
 in
 {
@@ -66,6 +81,8 @@ in
       paths = devPkgs
         ++ emacsPkgs
         ++ musicPkgs
+        ++ androidPkgs
+        ++ videoPkgs
       ;
     };
   };

@@ -13,6 +13,7 @@
     zsh
     oh-my-zsh
   ];
+
   services.lorri.enable = true;
 
   programs.zsh = {

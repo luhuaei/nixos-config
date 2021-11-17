@@ -79,7 +79,7 @@
 
   # List services that you want to enable:
   services.touchctrl = {
-    enable = true;
+    enable = false;
     touchpad = "/dev/input/event11";
     keyboard = "/dev/input/event0";
   };
