@@ -23,7 +23,7 @@
   networking.firewall.allowedTCPPorts = [ 80 443 8080 ];
   networking.firewall.allowedUDPPorts = [ 53 ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   environment.systemPackages = with pkgs; [
     wget

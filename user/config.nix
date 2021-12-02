@@ -45,7 +45,6 @@ let
     glibc
     gnumake
     graphviz
-    gvfs
     konsole
     librime
     massif-visualizer
@@ -71,6 +70,8 @@ let
     android-studio
     openjdk11
     gradle
+    kotlin
+    kotlin-language-server
   ];
 in
 {
