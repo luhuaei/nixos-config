@@ -36,9 +36,14 @@ let
 
     caddy
     calibre
+
     cntr
-    clinfo
     docker
+    docker-compose
+
+    python3
+
+    clinfo
     dos2unix
     gcc
     git

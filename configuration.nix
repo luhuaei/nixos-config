@@ -61,13 +61,18 @@
 
     gvfs
     file
+
+    nettools
     socat
+    traceroute
+    wireshark
 
     # system
     pciutils
     usbutils
     binutils
     inetutils
+    dnsutils
     dmidecode
     lshw
     lsof
