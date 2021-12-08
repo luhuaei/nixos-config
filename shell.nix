@@ -12,6 +12,8 @@
     lorri
     zsh
     oh-my-zsh
+    zoxide
+    fzf
   ];
 
   services.lorri.enable = true;
@@ -19,7 +21,10 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    interactiveShellInit = ''eval "$(direnv hook zsh)"'';
+    interactiveShellInit = ''
+      eval "$(zoxide init zsh)"
+      eval "$(direnv hook zsh)"
+    '';
   };
   programs.zsh.ohMyZsh = {
     enable = true;
