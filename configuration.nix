@@ -62,6 +62,9 @@
     gvfs
     file
 
+    # other libc implement
+    musl
+
     nettools
     socat
     traceroute

@@ -69,6 +69,13 @@ let
 
     wpsoffice
     nixpkgs-review
+
+    # link `npm link` or `npm install -g` will default create node_modules on
+    # npm bin directory(on `/nix/store`), but on nixos it is a read-only file-system
+    # so must set npm prefix.
+    # npm config set prefix '~/.npm-global'
+    # see also https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
+    nodejs-16_x
   ];
 
   androidPkgs = with pkgs; [
