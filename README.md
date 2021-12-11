@@ -20,6 +20,7 @@
 ```
 cd nixos-config
 ln -sf `pwd`/user /yout/user/path/.config/nixpkgs
+ln -sf `pwd`/direnv /yout/user/path/.config/
 ```
 
 # add channel

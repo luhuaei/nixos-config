@@ -11,10 +11,10 @@ in
     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
   ];
 
-  # nix.package = pkgs.nixUnstable;
-  # nix.extraOptions = ''
-  #   experimental-features = nix-command flakes
-  # '';
+  nix.package = pkgs.nixUnstable;
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
 
   nixpkgs.config = {
     allowUnfree = true;
