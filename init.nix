@@ -14,7 +14,12 @@ in
   nix.package = pkgs.nixUnstable;
   nix.extraOptions = ''
     experimental-features = nix-command flakes
+    gc-keep-outputs = true
+    gc-keep-derivations = true
   '';
+  nix.maxJobs = "auto";
+  nix.autoOptimiseStore = true;
+  nix.buildCores = 0;
 
   nixpkgs.config = {
     allowUnfree = true;
@@ -25,5 +30,4 @@ in
       vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
     };
   };
-  # nixpkgs.overlays = [ overlay-unstable ];
 }

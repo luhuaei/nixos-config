@@ -37,7 +37,7 @@
     extraUsers.redeveder = rec {
       isNormalUser = true;
       home = "/home/redeveder";
-      extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
+      extraGroups = [ "wheel" "docker" "netdev" ]; # Enable ‘sudo’ for the user.
     };
   };
 

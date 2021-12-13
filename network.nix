@@ -3,21 +3,40 @@
 {
 
   networking.hostName = "nixos"; # Define your hostname.
-  networking.networkmanager.enable = true;
+  networking.dhcpcd.enable = false;
+  networking.networkmanager = {
+    enable = true;
+    logLevel = "TRACE";
+    dns = "none";
+    insertNameservers = [ "127.0.0.1" "::1" ];
+  };
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  programs.nm-applet.enable = true;
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-  networking.interfaces.eno1.useDHCP = true;
-  networking.interfaces.wlp4s0.useDHCP = true;
+
+  services.coredns.enable = true;
+  services.coredns.config =
+    ''
+      . {
+        # Cloudflare and Google
+        forward . 1.1.1.1 1.0.0.1 8.8.8.8 8.8.4.4
+        cache
+      }
+
+      local {
+        template IN A  {
+            answer "{{ .Name }} 0 IN A 127.0.0.1"
+        }
+      }
+    '';
 
   # Configure network proxy if necessary
   networking.proxy.default = "http://127.0.0.1:1080";
-  networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain,heiyu.space";
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 80 443 8080 ];
