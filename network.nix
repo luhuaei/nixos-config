@@ -53,16 +53,14 @@
   systemd.services.v2ray = {
     enable = true;
     wantedBy = [ "multi-user.target" ];
-    after = [ "network.target" ];
+    after = [ "network.target" "nss-lookup.target" ];
     description = "V2Ray Service";
     serviceConfig = {
       User = "nobody";
+      Environment = "V2RAY_LOCATION_ASSET=/etc/v2ray";
       CapabilityBoundingSe = "CAP_NET_ADMIN CAP_NET_BIND_SERVICE";
       AmbientCapabilities = "CAP_NET_ADMIN CAP_NET_BIND_SERVICE";
-      NoNewPrivileges = true;
       ExecStart = ''${pkgs.v2ray}/bin/v2ray -c /etc/v2ray/config.json'';
-      Restart = "on-failure";
-      RestartPreventExitStatus = 23;
     };
   };
 }
