@@ -43,3 +43,16 @@ If working, you can `sudo nixos-rebuild switch` use latest generation for your s
 ```
 nix-env -iA nixpkgs.myEnv
 ```
+
+# nodejs/npm
+link `npm link` or `npm install -g` will default create node_modules on
+npm bin directory(on `/nix/store`), but on nixos it is a read-only file-system
+so must set npm prefix.
+
+see also https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
+
+```sh
+npm config set prefix '~/.npm-global'
+```
+
+You all npm global application will store on this directory. You can use `npx prettier`
