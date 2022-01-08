@@ -17,9 +17,9 @@ in
     gc-keep-outputs = true
     gc-keep-derivations = true
   '';
-  nix.maxJobs = "auto";
+  nix.maxJobs = 16;
   nix.autoOptimiseStore = true;
-  nix.buildCores = 0;
+  nix.buildCores = 16;
 
   nixpkgs.config = {
     allowUnfree = true;
