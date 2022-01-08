@@ -13,7 +13,7 @@
       ./shell.nix
       ./network.nix
       ./language.nix
-      ./x.nix
+      ./wm.nix
       ./virtualisation.nix
 
       # services
