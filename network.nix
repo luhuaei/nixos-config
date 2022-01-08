@@ -6,7 +6,6 @@
   networking.dhcpcd.enable = false;
   networking.networkmanager = {
     enable = true;
-    logLevel = "TRACE";
     dns = "none";
     insertNameservers = [ "127.0.0.1" "::1" ];
   };
